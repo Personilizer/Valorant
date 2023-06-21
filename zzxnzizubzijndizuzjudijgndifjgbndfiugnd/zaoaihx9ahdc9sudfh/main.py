@@ -51,7 +51,7 @@ class triggerBot():
 
     def click(self):
         keyboard.press("z")
-        keyboard.wait("z")
+        time.sleep(0.1)  # Adjust the delay as needed
         keyboard.release("z")
 
     def approx(self, r, g, b):
@@ -77,12 +77,11 @@ class triggerBot():
         pmap = self.grab()
         
         try:
-            while True:
-                for x in range(0, GRABZONE*2):
-                    for y in range(0, GRABZONE*2):
-                        r, g, b = pmap.getpixel((x, y))
-                        if self.approx(r, g, b):
-                            raise FoundEnemy
+            for x in range(0, GRABZONE*2):
+                for y in range(0, GRABZONE*2):
+                    r, g, b = pmap.getpixel((x, y))
+                    if self.approx(r, g, b):
+                        raise FoundEnemy
         except FoundEnemy:
             self.last_reac = int((time.time() - start_time) * 1000)
             self.click()  # Call the modified click() method
@@ -103,7 +102,7 @@ class triggerBot():
 
 def print_banner(bot):
     os.system("cls")
-    print(Style.BRIGHT + Fore.CYAN + "Silent-Aim v1.0 - Code To Trader" + Style.RESET_ALL)
+    print(Style.BRIGHT + Fore.CYAN + "Silent-Aim v1.0 - miitch#5275 " + Style.RESET_ALL)
     print("===== Controls =====")
     print("Activate   :", Fore.YELLOW + TRIGGER_KEY + Style.RESET_ALL)
     print("Change Gun  :", Fore.YELLOW + SWITCH_KEY + Style.RESET_ALL)

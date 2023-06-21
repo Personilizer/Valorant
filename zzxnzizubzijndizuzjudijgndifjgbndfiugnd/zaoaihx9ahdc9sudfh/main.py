@@ -103,7 +103,7 @@ class triggerBot():
 
 def print_banner(bot):
     os.system("cls")
-    print(Style.BRIGHT + Fore.CYAN + "Silent-Aim v1.0 - miitch#5275 " + Style.RESET_ALL)
+    print(Style.BRIGHT + Fore.CYAN + "Silent-Aim v1.0 - Code To Trader" + Style.RESET_ALL)
     print("===== Controls =====")
     print("Activate   :", Fore.YELLOW + TRIGGER_KEY + Style.RESET_ALL)
     print("Change Gun  :", Fore.YELLOW + SWITCH_KEY + Style.RESET_ALL)
